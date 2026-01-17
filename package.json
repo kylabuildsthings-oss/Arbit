@@ -1,7 +1,26 @@
 {
-  "name": "pear-characters",
+  "name": "arbit-trading-cards",
   "version": "0.1.0",
+  "description": "A modern web application for collecting and trading crypto-themed trading cards, integrated with Pear Protocol",
   "private": true,
+  "keywords": [
+    "trading-cards",
+    "crypto",
+    "web3",
+    "nextjs",
+    "pear-protocol",
+    "trading"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/arbit-trading-cards.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/arbit-trading-cards/issues"
+  },
+  "homepage": "https://github.com/yourusername/arbit-trading-cards#readme",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

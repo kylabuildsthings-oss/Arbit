@@ -1,12 +1,13 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import Navigation from './components/Navigation'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Pear Characters - Trade Narratives, Not Just Tokens',
-  description: 'Hackathon project integrating with Pear Protocol API',
+  title: 'ARBIT - Trading Cards',
+  description: 'Collect, trade, and master trading card strategies. Learn crypto trading concepts while building your ultimate collection.',
 }
 
 export default function RootLayout({
@@ -16,7 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        {children}
+        <Navigation />
+      </body>
     </html>
   )
 }
