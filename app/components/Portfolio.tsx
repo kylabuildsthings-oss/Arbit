@@ -129,12 +129,14 @@ export default function Portfolio() {
     const paddedMax = maxValue + range * 0.1
     const paddedRange = paddedMax - paddedMin
 
-    const chartWidth = 1400
-    const chartHeight = 550
-    const leftPadding = 85  // More space for Y-axis labels
+    // Responsive chart dimensions for fullscreen
+    const isLargeScreen = typeof window !== 'undefined' && window.innerWidth >= 1920
+    const chartWidth = isLargeScreen ? 1600 : 1400
+    const chartHeight = isLargeScreen ? 700 : 550
+    const leftPadding = isLargeScreen ? 100 : 85  // More space for Y-axis labels
     const rightPadding = 30
     const topPadding = 30
-    const bottomPadding = 50  // More space for X-axis labels
+    const bottomPadding = isLargeScreen ? 60 : 50  // More space for X-axis labels
     const chartAreaWidth = chartWidth - leftPadding - rightPadding
     const chartAreaHeight = chartHeight - topPadding - bottomPadding
 
@@ -186,7 +188,7 @@ export default function Portfolio() {
                 x={leftPadding - 15}
                 y={y + 4}
                 fill="var(--text-secondary)"
-                fontSize="18"
+                fontSize={isLargeScreen ? "20" : "18"}
                 fontWeight="600"
                 textAnchor="end"
                 dominantBaseline="middle"
@@ -255,7 +257,7 @@ export default function Portfolio() {
                 x={x}
                 y={chartHeight - 15}
                 fill="var(--text-secondary)"
-                fontSize="18"
+                fontSize={isLargeScreen ? "20" : "18"}
                 fontWeight="600"
                 textAnchor="middle"
               >

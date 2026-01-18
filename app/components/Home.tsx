@@ -2,14 +2,10 @@
 
 import { useState } from 'react'
 import WalletConnect from './WalletConnect'
-import Card from './Card'
-import { Card as CardType, Rarity, Faction } from '@/types/Card'
 import './styles/Home.css'
 
 export default function Home() {
   const [walletAddress, setWalletAddress] = useState<string | null>(null)
-  const [demoCard, setDemoCard] = useState<CardType | null>(null)
-  const [isGenerating, setIsGenerating] = useState(false)
   const [isDispersing, setIsDispersing] = useState(false)
 
   const handleWalletConnected = (address: string) => {
@@ -24,46 +20,6 @@ export default function Home() {
     }, 1500) // Match animation duration
   }
 
-  const handleGenerateDemoCard = async () => {
-    setIsGenerating(true)
-    try {
-      const response = await fetch('/api/bot-demo')
-      const data = await response.json()
-
-      if (data.rarity && data.tradeId) {
-        // Map API rarity (uppercase string) to Rarity enum (lowercase)
-        const rarityMap: Record<string, Rarity> = {
-          'COMMON': Rarity.COMMON,
-          'RARE': Rarity.RARE,
-          'LEGENDARY': Rarity.LEGENDARY,
-        }
-
-        const rarity = rarityMap[data.rarity] || Rarity.COMMON
-
-        // Create a demo card object
-        const newDemoCard: CardType = {
-          id: data.tradeId,
-          name: 'Demo Card',
-          title: `Generated ${data.rarity} Card`,
-          rarity: rarity,
-          faction: Faction.COSMIC, // Default faction
-          stats: {
-            longPosition: Math.floor(Math.random() * 100),
-            shortPosition: Math.floor(Math.random() * 100),
-            leverage: Math.floor(Math.random() * 100),
-            marketIQ: Math.floor(Math.random() * 100),
-          },
-          description: `This is a demo card generated from trade data. ROI: ${data.tradeData.roi}%, Stake: $${data.tradeData.stakeAmount}`,
-        }
-
-        setDemoCard(newDemoCard)
-      }
-    } catch (error) {
-      console.error('Error generating demo card:', error)
-    } finally {
-      setIsGenerating(false)
-    }
-  }
 
   return (
     <div className="home-screen">
@@ -102,24 +58,6 @@ export default function Home() {
         <div className="wallet-connect-section">
           <WalletConnect onConnected={handleWalletConnected} />
         </div>
-
-        {/* Generate Demo Card Button */}
-        <div className="demo-card-section">
-          <button
-            className="generate-demo-button"
-            onClick={handleGenerateDemoCard}
-            disabled={isGenerating}
-          >
-            {isGenerating ? 'Generating...' : 'Generate Demo Card'}
-          </button>
-        </div>
-
-        {/* Demo Card Display */}
-        {demoCard && (
-          <div className="demo-card-container">
-            <Card card={demoCard} size="medium" />
-          </div>
-        )}
       </div>
     </div>
   )

@@ -1,20 +1,31 @@
 .help-screen {
   min-height: 100vh;
   background: linear-gradient(180deg, var(--gradient-start) 0%, var(--gradient-middle) 50%, var(--gradient-end) 100%);
-  padding: clamp(40px, 5vw, 50px) clamp(24px, 5vw, 60px);
+  padding: clamp(40px, 5vw, 50px);
   padding-top: clamp(180px, 22vh, 220px);
   padding-bottom: clamp(40px, 5vw, 60px);
   transition: background 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .help-content {
-  max-width: min(1400px, 90vw);
+  max-width: min(1000px, 90vw);
   margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .help-header {
   margin-bottom: clamp(40px, 5vw, 60px);
   text-align: center;
+  width: 100%;
 }
 
 .help-title {
@@ -45,6 +56,7 @@
 
 .faq-container {
   width: 100%;
+  margin: 0 auto;
 }
 
 .faq-item {
@@ -132,6 +144,7 @@
   padding-top: 30px;  /* Increased from 20px */
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
+  width: 100%;
 }
 
 /* Light mode footer border */
@@ -159,10 +172,6 @@
     padding: 40px 100px;
     padding-top: 260px;
   }
-  
-  .help-screen {
-    max-width: 1400px;
-  }
 }
 
 /* Large Laptops (1440px - 1919px) */
@@ -170,10 +179,6 @@
   .screen-container {
     padding: 35px 80px;
     padding-top: 250px;
-  }
-  
-  .help-screen {
-    max-width: 1300px;
   }
 }
 
@@ -183,10 +188,6 @@
     padding: 30px 60px;
     padding-top: 240px;
   }
-  
-  .help-screen {
-    max-width: 1200px;
-  }
 }
 
 /* Small Laptops (1024px - 1279px) */
@@ -194,10 +195,6 @@
   .screen-container {
     padding: 25px 50px;
     padding-top: 230px;
-  }
-  
-  .help-screen {
-    max-width: 1100px;
   }
 }
 

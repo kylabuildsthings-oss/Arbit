@@ -1,15 +1,20 @@
 .screen-container {
   min-height: 100vh;
   background: linear-gradient(180deg, var(--gradient-start) 0%, var(--gradient-middle) 50%, var(--gradient-end) 100%);
-  padding: 220px 60px 50px;
+  padding: clamp(180px, 20vh, 220px) clamp(20px, 5vw, 100px) clamp(30px, 5vw, 50px);
   transition: background 0.3s ease;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .header {
   padding: 30px 0;
   padding-top: 20px;
-  max-width: 1600px;
-  margin: 0 auto 48px auto;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 48px 0;
+  text-align: left;
 }
 
 .header-title-container {
@@ -179,6 +184,10 @@
   display: flex;
   gap: 20px;  /* Reduced gap */
   margin-bottom: 24px;  /* Reduced spacing */
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .stat-box {
@@ -232,8 +241,12 @@
 .wallet-container {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 16px;  /* Increased from 12px */
-  padding: 20px;  /* Increased from 12px */
+  padding: clamp(24px, 3vw, 30px) clamp(32px, 4vw, 40px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 /* Light mode wallet container */
@@ -298,12 +311,13 @@
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 18vw, 300px), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(clamp(280px, 22vw, 350px), 1fr));
   gap: clamp(28px, 3.5vw, 40px);
   padding: clamp(32px, 4vw, 40px) 0;
-  justify-items: center;
-  max-width: min(1600px, 90vw);
-  margin: 0 auto;
+  justify-items: start;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
 }
 
 /* Responsive adjustments for different laptop sizes */
@@ -311,13 +325,13 @@
 /* Extra Large Screens (1920px+) */
 @media (min-width: 1920px) {
   .screen-container {
-    padding: 40px 100px;
-    padding-top: 260px;
+    padding: clamp(40px, 5vw, 60px) clamp(60px, 8vw, 120px);
+    padding-top: clamp(180px, 20vh, 260px);
   }
   
   .cards-grid {
-    max-width: 1800px;
-    gap: 32px;
+    max-width: 100%;
+    gap: 40px;
   }
   
   .card-item {
@@ -329,13 +343,13 @@
 /* Large Laptops (1440px - 1919px) */
 @media (min-width: 1440px) and (max-width: 1919px) {
   .screen-container {
-    padding: 35px 80px;
-    padding-top: 250px;
+    padding: clamp(35px, 4vw, 50px) clamp(50px, 6vw, 100px);
+    padding-top: clamp(180px, 20vh, 250px);
   }
   
   .cards-grid {
-    max-width: 1600px;
-    gap: 28px;
+    max-width: 100%;
+    gap: 36px;
   }
   
   .card-item {
@@ -347,13 +361,13 @@
 /* Medium Laptops (1280px - 1439px) */
 @media (min-width: 1280px) and (max-width: 1439px) {
   .screen-container {
-    padding: 30px 60px;
-    padding-top: 240px;
+    padding: clamp(30px, 3vw, 40px) clamp(40px, 5vw, 80px);
+    padding-top: clamp(180px, 20vh, 240px);
   }
   
   .cards-grid {
-    max-width: 1400px;
-    gap: 24px;
+    max-width: 100%;
+    gap: 32px;
   }
   
   .card-item {
@@ -365,13 +379,13 @@
 /* Small Laptops (1024px - 1279px) */
 @media (min-width: 1024px) and (max-width: 1279px) {
   .screen-container {
-    padding: 25px 50px;
-    padding-top: 230px;
+    padding: clamp(25px, 3vw, 35px) clamp(30px, 4vw, 60px);
+    padding-top: clamp(180px, 20vh, 230px);
   }
   
   .cards-grid {
-    max-width: 1200px;
-    gap: 22px;
+    max-width: 100%;
+    gap: 28px;
   }
   
   .card-item {
