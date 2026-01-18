@@ -29,6 +29,10 @@ export default function Navigation() {
         <span className="nav-icon">📚</span>
         <span className="nav-label">Collection</span>
       </Link>
+      <Link href="/about" className={`nav-item ${isActive('/about') ? 'active' : ''}`}>
+        <span className="nav-icon">ℹ️</span>
+        <span className="nav-label">About</span>
+      </Link>
       <Link href="/help" className={`nav-item ${isActive('/help') ? 'active' : ''}`}>
         <span className="nav-icon">❓</span>
         <span className="nav-label">Help</span>

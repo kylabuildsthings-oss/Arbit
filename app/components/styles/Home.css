@@ -1,9 +1,9 @@
 .home-screen {
   min-height: 100vh;
   background: linear-gradient(180deg, var(--gradient-start) 0%, var(--gradient-middle) 50%, var(--gradient-end) 100%);
-  padding: 20px 40px;  /* Reduced padding */
-  padding-top: 220px;  /* Increased top padding to move content further down from navigation */
-  padding-bottom: 20px;  /* Reduced bottom padding */
+  padding: clamp(20px, 3vw, 30px) clamp(24px, 5vw, 60px);
+  padding-top: clamp(180px, 22vh, 220px);
+  padding-bottom: clamp(30px, 4vw, 40px);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -64,10 +64,11 @@
 
 .home-content {
   width: 100%;
-  max-width: 1200px;  /* Increased from 900px */
+  max-width: min(1400px, 90vw);
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 clamp(20px, 3vw, 40px);
 }
 
 /* Logo Section */
@@ -79,9 +80,9 @@
 }
 
 .cards-container {
-  width: 400px;  /* Significantly increased logo size */
-  height: 400px;  /* Significantly increased logo size */
-  margin-bottom: 20px;  /* Reduced margin */
+  width: clamp(280px, 25vw, 400px);
+  height: clamp(280px, 25vw, 400px);
+  margin-bottom: clamp(16px, 2vw, 20px);
   position: relative;
   display: flex;
   align-items: center;
@@ -151,10 +152,10 @@
 }
 
 .trading-card {
-  width: 280px;  /* Significantly increased logo size */
-  height: 360px;  /* Significantly increased logo size */
-  border-radius: 24px;
-  border: 5px solid #fff;
+  width: clamp(200px, 18vw, 280px);
+  height: clamp(260px, 23vw, 360px);
+  border-radius: clamp(18px, 2vw, 24px);
+  border: clamp(3px, 0.4vw, 5px) solid #fff;
   position: absolute;
   display: flex;
   align-items: center;
@@ -213,8 +214,8 @@
 }
 
 .logo-letter {
-  font-size: 180px;  /* Significantly increased logo size */
-  font-weight: 900;  /* Extra bold */
+  font-size: clamp(120px, 12vw, 180px);
+  font-weight: 900;
   color: #fff;
   text-shadow: 
     0 0 20px rgba(139, 92, 246, 0.8),
@@ -239,8 +240,8 @@
 }
 
 .bitcoin-symbol {
-  font-size: 150px;  /* Significantly increased logo size */
-  font-weight: 900;  /* Extra bold */
+  font-size: clamp(100px, 10vw, 150px);
+  font-weight: 900;
   color: #fff;
   text-shadow: 
     0 0 20px rgba(139, 92, 246, 0.8),
@@ -249,8 +250,8 @@
 }
 
 .logo-text {
-  font-size: 120px;  /* Significantly increased logo size */
-  font-weight: 900;  /* Extra bold */
+  font-size: clamp(80px, 8vw, 120px);
+  font-weight: 900;
   color: var(--text-primary);
   letter-spacing: 12px;
   margin-bottom: 8px;
@@ -268,7 +269,7 @@
 }
 
 .tagline {
-  font-size: 36px;  /* Increased logo size */
+  font-size: clamp(24px, 2.5vw, 36px);
   color: var(--text-secondary);
   font-weight: 400;
   letter-spacing: 6px;
@@ -280,32 +281,31 @@
 /* Welcome Section */
 .welcome-section {
   width: 100%;
-  max-width: 1200px;
-  margin-top: 20px;  /* Reduced margin for compact layout */
-  margin-bottom: 5px;  /* Reduced bottom margin to bring wallet connection closer */
+  max-width: min(1400px, 90vw);
+  margin-top: clamp(30px, 4vw, 40px);
+  margin-bottom: clamp(24px, 3vw, 30px);
   text-align: center;
+  padding: 0 clamp(30px, 5vw, 60px);
 }
 
 .welcome-title {
-  font-size: 48px;  /* Reduced for compact layout */
+  font-size: clamp(40px, 5vw, 56px);
   font-weight: bold;
   color: var(--text-primary);
-  margin-bottom: 16px;  /* Reduced margin */
+  margin-bottom: clamp(20px, 2.5vw, 24px);
   margin-top: 0;
   transition: color 0.3s ease;
 }
 
 .welcome-text {
-  font-size: 24px;  /* Reduced for compact layout */
+  font-size: clamp(20px, 2.2vw, 26px);
   color: var(--text-secondary);
-  line-height: 36px;  /* Reduced line height */
-  padding: 0 40px;
-  margin: 0;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+  line-height: clamp(32px, 3.5vw, 42px);
+  padding: 0 clamp(30px, 5vw, 60px);
+  margin: 0 auto;
+  max-width: min(1200px, 85vw);
   white-space: normal;
-  word-spacing: 2px;
+  word-spacing: clamp(2px, 0.3vw, 3px);
   transition: color 0.3s ease;
 }
 
@@ -399,7 +399,213 @@
   overflow-wrap: break-word;
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments for different laptop sizes */
+
+/* Extra Large Screens (1920px+) */
+@media (min-width: 1920px) {
+  .home-screen {
+    padding: 20px 80px;
+    padding-top: 240px;
+  }
+  
+  .home-content {
+    max-width: 1600px;
+  }
+  
+  .welcome-section {
+    max-width: 1200px;
+  }
+  
+  .cards-container {
+    width: 450px;
+    height: 450px;
+  }
+  
+  .trading-card {
+    width: 320px;
+    height: 420px;
+  }
+  
+  .logo-letter {
+    font-size: 200px;
+  }
+  
+  .bitcoin-symbol {
+    font-size: 170px;
+  }
+  
+  .logo-text {
+    font-size: 140px;
+  }
+  
+  .tagline {
+    font-size: 40px;
+  }
+  
+  .welcome-title {
+    font-size: 80px;
+  }
+  
+  .welcome-text {
+    font-size: 28px;
+    line-height: 44px;
+  }
+}
+
+/* Large Laptops (1440px - 1919px) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .home-screen {
+    padding: 20px 60px;
+    padding-top: 230px;
+  }
+  
+  .home-content {
+    max-width: 1400px;
+  }
+  
+  .welcome-section {
+    max-width: 1100px;
+  }
+  
+  .cards-container {
+    width: 420px;
+    height: 420px;
+  }
+  
+  .trading-card {
+    width: 300px;
+    height: 390px;
+  }
+  
+  .logo-letter {
+    font-size: 190px;
+  }
+  
+  .bitcoin-symbol {
+    font-size: 160px;
+  }
+  
+  .logo-text {
+    font-size: 130px;
+  }
+  
+  .tagline {
+    font-size: 38px;
+  }
+  
+  .welcome-title {
+    font-size: 72px;
+  }
+  
+  .welcome-text {
+    font-size: 26px;
+    line-height: 40px;
+  }
+}
+
+/* Medium Laptops (1280px - 1439px) */
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .home-screen {
+    padding: 20px 50px;
+    padding-top: 220px;
+  }
+  
+  .home-content {
+    max-width: 1300px;
+  }
+  
+  .welcome-section {
+    max-width: 1000px;
+  }
+  
+  .cards-container {
+    width: 400px;
+    height: 400px;
+  }
+  
+  .trading-card {
+    width: 280px;
+    height: 360px;
+  }
+  
+  .logo-letter {
+    font-size: 180px;
+  }
+  
+  .bitcoin-symbol {
+    font-size: 150px;
+  }
+  
+  .logo-text {
+    font-size: 120px;
+  }
+  
+  .tagline {
+    font-size: 36px;
+  }
+  
+  .welcome-title {
+    font-size: 64px;
+  }
+  
+  .welcome-text {
+    font-size: 24px;
+    line-height: 38px;
+  }
+}
+
+/* Small Laptops (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .home-screen {
+    padding: 20px 40px;
+    padding-top: 210px;
+  }
+  
+  .home-content {
+    max-width: 1200px;
+  }
+  
+  .welcome-section {
+    max-width: 900px;
+  }
+  
+  .cards-container {
+    width: 360px;
+    height: 360px;
+  }
+  
+  .trading-card {
+    width: 260px;
+    height: 340px;
+  }
+  
+  .logo-letter {
+    font-size: 160px;
+  }
+  
+  .bitcoin-symbol {
+    font-size: 130px;
+  }
+  
+  .logo-text {
+    font-size: 100px;
+  }
+  
+  .tagline {
+    font-size: 32px;
+  }
+  
+  .welcome-title {
+    font-size: 56px;
+  }
+  
+  .welcome-text {
+    font-size: 22px;
+    line-height: 34px;
+  }
+}
+
+/* Tablets and below */
 @media (max-width: 768px) {
   .logo-text {
     font-size: 72px;

@@ -1,36 +1,46 @@
 .help-screen {
   min-height: 100vh;
   background: linear-gradient(180deg, var(--gradient-start) 0%, var(--gradient-middle) 50%, var(--gradient-end) 100%);
-  padding: 40px 30px;  /* Increased padding */
-  padding-top: 220px;  /* Increased top padding to avoid navigation clash */
-  padding-bottom: 40px;  /* Reduced bottom padding */
+  padding: clamp(40px, 5vw, 50px) clamp(24px, 5vw, 60px);
+  padding-top: clamp(180px, 22vh, 220px);
+  padding-bottom: clamp(40px, 5vw, 60px);
   transition: background 0.3s ease;
 }
 
 .help-content {
-  max-width: 1000px;  /* Increased from 800px */
+  max-width: min(1400px, 90vw);
   margin: 0 auto;
 }
 
 .help-header {
-  margin-bottom: 40px;  /* Increased from 30px */
+  margin-bottom: clamp(40px, 5vw, 60px);
   text-align: center;
 }
 
 .help-title {
-  font-size: 56px;  /* Increased from 32px */
+  font-size: clamp(40px, 5vw, 56px);
   font-weight: bold;
   color: var(--text-primary);
-  margin-bottom: 16px;  /* Increased from 8px */
+  margin-bottom: clamp(20px, 2.5vw, 24px);
   margin-top: 0;
   transition: color 0.3s ease;
 }
 
+/* Light mode title */
+[data-theme='light'] .help-title {
+  color: #1a1a1a;
+}
+
 .help-subtitle {
-  font-size: 26px;  /* Increased from 16px */
+  font-size: clamp(20px, 2.5vw, 26px);
   color: var(--text-tertiary);
   margin: 0;
   transition: color 0.3s ease;
+}
+
+/* Light mode subtitle */
+[data-theme='light'] .help-subtitle {
+  color: #4a4a4a;
 }
 
 .faq-container {
@@ -38,11 +48,17 @@
 }
 
 .faq-item {
-  margin-bottom: 16px;  /* Increased from 12px */
+  margin-bottom: 24px;
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 16px;  /* Increased from 12px */
+  border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
+}
+
+/* Light mode FAQ item */
+[data-theme='light'] .faq-item {
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .faq-question {
@@ -50,7 +66,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px;  /* Increased from 16px */
+  padding: clamp(24px, 3vw, 28px) clamp(28px, 3.5vw, 32px);
   background: transparent;
   border: none;
   cursor: pointer;
@@ -62,12 +78,22 @@
   background-color: rgba(255, 255, 255, 0.05);
 }
 
+/* Light mode FAQ question hover */
+[data-theme='light'] .faq-question:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
 .faq-question-text {
   flex: 1;
-  font-size: 24px;  /* Increased from 16px */
+  font-size: clamp(20px, 2.5vw, 24px);
   font-weight: 600;
   color: #fff;
-  margin-right: 16px;  /* Increased from 12px */
+  margin-right: clamp(12px, 1.5vw, 16px);
+}
+
+/* Light mode FAQ question text */
+[data-theme='light'] .faq-question-text {
+  color: #1a1a1a;
 }
 
 .expand-icon {
@@ -79,8 +105,13 @@
   flex-shrink: 0;
 }
 
+/* Light mode expand icon */
+[data-theme='light'] .expand-icon {
+  color: #6d28d9;
+}
+
 .faq-answer {
-  padding: 0 24px 24px 24px;  /* Increased from 0 16px 16px 16px */
+  padding: 0 clamp(28px, 3.5vw, 32px) clamp(24px, 3vw, 28px) clamp(28px, 3.5vw, 32px);
 }
 
 .faq-answer-text {
@@ -91,11 +122,21 @@
   margin: 0;
 }
 
+/* Light mode FAQ answer text */
+[data-theme='light'] .faq-answer-text {
+  color: #3d3d3d;
+}
+
 .help-footer {
   margin-top: 40px;  /* Increased from 30px */
   padding-top: 30px;  /* Increased from 20px */
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
+}
+
+/* Light mode footer border */
+[data-theme='light'] .help-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .footer-text {
@@ -104,7 +145,63 @@
   margin: 0;
 }
 
+/* Light mode footer text */
+[data-theme='light'] .footer-text {
+  color: #4a4a4a;
+}
+
 /* Responsive adjustments */
+/* Responsive adjustments for different laptop sizes */
+
+/* Extra Large Screens (1920px+) */
+@media (min-width: 1920px) {
+  .screen-container {
+    padding: 40px 100px;
+    padding-top: 260px;
+  }
+  
+  .help-screen {
+    max-width: 1400px;
+  }
+}
+
+/* Large Laptops (1440px - 1919px) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .screen-container {
+    padding: 35px 80px;
+    padding-top: 250px;
+  }
+  
+  .help-screen {
+    max-width: 1300px;
+  }
+}
+
+/* Medium Laptops (1280px - 1439px) */
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .screen-container {
+    padding: 30px 60px;
+    padding-top: 240px;
+  }
+  
+  .help-screen {
+    max-width: 1200px;
+  }
+}
+
+/* Small Laptops (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .screen-container {
+    padding: 25px 50px;
+    padding-top: 230px;
+  }
+  
+  .help-screen {
+    max-width: 1100px;
+  }
+}
+
+/* Tablets and below */
 @media (max-width: 768px) {
   .help-title {
     font-size: 44px;

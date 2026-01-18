@@ -1,0 +1,541 @@
+.about-container {
+  padding-top: 220px;
+  padding-bottom: 80px;
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+/* Header styles for About page */
+.about-container .header-title {
+  color: var(--text-primary);
+}
+
+[data-theme='light'] .about-container .header-title {
+  color: #1a1a1a;
+}
+
+.about-container .header-subtitle {
+  color: var(--text-secondary);
+}
+
+[data-theme='light'] .about-container .header-subtitle {
+  color: #4a4a4a;
+}
+
+.about-content {
+  max-width: min(1600px, 90vw);
+  margin: 0 auto;
+  padding: 0 clamp(30px, 5vw, 60px);
+}
+
+.about-section {
+  margin-bottom: clamp(60px, 8vw, 100px);
+}
+
+.about-section:first-of-type {
+  margin-top: clamp(30px, 4vw, 40px);
+}
+
+.section-title {
+  font-size: clamp(36px, 4.5vw, 48px);
+  font-weight: 700;
+  margin-bottom: clamp(32px, 4vw, 40px);
+  max-width: 100%;
+  position: relative;
+  /* Use visible purple gradient - works in both light and dark */
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 50%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  /* Fallback solid color for visibility */
+  color: #8b5cf6;
+}
+
+/* Ensure visibility even if gradient doesn't work */
+@supports not (-webkit-background-clip: text) {
+  .section-title {
+    color: #8b5cf6;
+    background: none;
+    -webkit-text-fill-color: #8b5cf6;
+  }
+}
+
+/* Light mode specific adjustments */
+[data-theme='light'] .section-title {
+  background: linear-gradient(135deg, #6d28d9 0%, #5b21b6 50%, #6d28d9 100%);
+  color: #6d28d9;
+}
+
+[data-theme='light'] @supports not (-webkit-background-clip: text) {
+  .section-title {
+    color: #6d28d9;
+    -webkit-text-fill-color: #6d28d9;
+  }
+}
+
+.section-text {
+  font-size: clamp(18px, 2.2vw, 22px);
+  line-height: clamp(1.7, 2vw, 1.9);
+  color: var(--text-secondary);
+  margin-bottom: clamp(20px, 2.5vw, 24px);
+  max-width: 100%;
+}
+
+/* Light mode text visibility */
+[data-theme='light'] .section-text {
+  color: #2d2d2d;
+}
+
+.about-section:first-of-type .section-text {
+  font-size: 24px;
+  line-height: 2;
+  margin-bottom: 28px;
+  max-width: 100%;
+}
+
+[data-theme='light'] .about-section:first-of-type .section-text {
+  color: #1a1a1a;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(clamp(280px, 25vw, 300px), 1fr));
+  gap: clamp(28px, 3.5vw, 36px);
+  margin-top: clamp(32px, 4vw, 40px);
+}
+
+.feature-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: clamp(10px, 1.2vw, 12px);
+  padding: clamp(28px, 3.5vw, 40px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-height: clamp(240px, 28vh, 280px);
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.2);
+}
+
+.feature-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.feature-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+/* Light mode feature title */
+[data-theme='light'] .feature-title {
+  color: #1a1a1a;
+}
+
+.feature-description {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  flex: 1;
+}
+
+/* Light mode feature description */
+[data-theme='light'] .feature-description {
+  color: #3d3d3d;
+}
+
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.step-item {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 36px;
+  max-width: 100%;
+}
+
+.step-number {
+  min-width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+  color: white;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Light mode step number - ensure visibility */
+[data-theme='light'] .step-number {
+  background: linear-gradient(135deg, #6d28d9 0%, #5b21b6 100%);
+  box-shadow: 0 2px 8px rgba(109, 40, 217, 0.3);
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+/* Light mode step title */
+[data-theme='light'] .step-title {
+  color: #1a1a1a;
+}
+
+.step-description {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* Light mode step description */
+[data-theme='light'] .step-description {
+  color: #3d3d3d;
+}
+
+.learning-section {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 56px;
+  margin-top: 60px;
+  max-width: 100%;
+}
+
+.learning-resources {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 36px;
+  margin-top: 40px;
+}
+
+.resource-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 32px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: visible;
+}
+
+.resource-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(139, 92, 246, 0.15);
+}
+
+.resource-card:hover .resource-link {
+  text-decoration: underline;
+}
+
+.resource-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.resource-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Light mode resource title */
+[data-theme='light'] .resource-title {
+  color: #1a1a1a;
+}
+
+.resource-badge {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 6px;
+  background: rgba(139, 92, 246, 0.2);
+  color: var(--accent-color);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+}
+
+/* Light mode resource badge */
+[data-theme='light'] .resource-badge {
+  background: rgba(109, 40, 217, 0.15);
+  color: #6d28d9;
+  border-color: rgba(109, 40, 217, 0.3);
+}
+
+.resource-description {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+/* Light mode resource description */
+[data-theme='light'] .resource-description {
+  color: #3d3d3d;
+}
+
+.resource-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 100;
+  margin-top: auto;
+  padding: 8px 0;
+  user-select: none;
+}
+
+.resource-link:active {
+  opacity: 0.7;
+  transform: scale(0.98);
+}
+
+.resource-link:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.resource-link:hover {
+  color: var(--gradient-end);
+  text-decoration: underline;
+}
+
+/* Light mode resource link */
+[data-theme='light'] .resource-link {
+  color: #6d28d9;
+}
+
+[data-theme='light'] .resource-link:hover {
+  color: #5b21b6;
+  text-decoration: underline;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 18px;
+  color: var(--text-secondary);
+  padding: 20px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+/* Light mode feature item */
+[data-theme='light'] .feature-item {
+  color: #3d3d3d;
+}
+
+.feature-check {
+  color: #10b981;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/* Responsive adjustments for different laptop sizes */
+
+/* Extra Large Screens (1920px+) */
+@media (min-width: 1920px) {
+  .screen-container {
+    padding: 40px 100px;
+    padding-top: 260px;
+  }
+  
+  .about-content {
+    max-width: 1800px;
+    padding: 0 80px;
+  }
+  
+  .features-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+  
+  .learning-resources {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+  
+  .features-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Large Laptops (1440px - 1919px) */
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .screen-container {
+    padding: 35px 80px;
+    padding-top: 250px;
+  }
+  
+  .about-content {
+    max-width: 1600px;
+    padding: 0 60px;
+  }
+  
+  .features-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px;
+  }
+  
+  .learning-resources {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+  }
+  
+  .features-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Medium Laptops (1280px - 1439px) */
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .screen-container {
+    padding: 30px 60px;
+    padding-top: 240px;
+  }
+  
+  .about-content {
+    max-width: 1400px;
+    padding: 0 50px;
+  }
+  
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  
+  .learning-resources {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+  
+  .features-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Small Laptops (1024px - 1279px) */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .screen-container {
+    padding: 25px 50px;
+    padding-top: 230px;
+  }
+  
+  .about-content {
+    max-width: 1200px;
+    padding: 0 40px;
+  }
+  
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+  
+  .learning-resources {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+  }
+  
+  .features-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-content {
+    padding: 0 24px;
+  }
+  .about-container {
+    padding-top: 200px;
+    padding-bottom: 60px;
+  }
+
+  .about-section {
+    margin-bottom: 60px;
+  }
+
+  .section-title {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+
+  .section-text {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .about-section:first-of-type .section-text {
+    font-size: 20px;
+    margin-bottom: 24px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .step-item {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .step-number {
+    align-self: flex-start;
+  }
+
+  .learning-resources {
+    grid-template-columns: 1fr;
+  }
+
+  .learning-section {
+    padding: 24px;
+  }
+
+  .features-list {
+    grid-template-columns: 1fr;
+  }
+}

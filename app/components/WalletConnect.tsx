@@ -15,17 +15,21 @@ export default function WalletConnect({ onConnected }: WalletConnectProps) {
 
   useEffect(() => {
     // Check for existing wallet connection
-    const storedWallet = localStorage.getItem('walletAddress')
-    if (storedWallet) {
-      setWalletAddress(storedWallet)
-      setIsConnected(true)
+    if (typeof window !== 'undefined') {
+      const storedWallet = localStorage.getItem('walletAddress')
+      if (storedWallet) {
+        setWalletAddress(storedWallet)
+        setIsConnected(true)
+      }
     }
   }, [])
 
   const handleApproved = (address: string) => {
     setWalletAddress(address)
     setIsConnected(true)
-    localStorage.setItem('walletAddress', address)
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('walletAddress', address)
+    }
     setShowConnect(false)
     if (onConnected) {
       onConnected(address)
@@ -35,7 +39,9 @@ export default function WalletConnect({ onConnected }: WalletConnectProps) {
   const handleDisconnect = () => {
     setWalletAddress(null)
     setIsConnected(false)
-    localStorage.removeItem('walletAddress')
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('walletAddress')
+    }
     if (onConnected) {
       onConnected('')
     }

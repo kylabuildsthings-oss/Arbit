@@ -45,10 +45,6 @@ export async function POST(request: NextRequest) {
     // Set fixed notional to $10 as specified
     const notional = 10
 
-    console.log(`Executing basket trade for character: ${character.name}`)
-    console.log(`Long assets: ${longAssets.join(', ')}`)
-    console.log(`Short assets: ${shortAssets.join(', ')}`)
-    console.log(`Notional: $${notional}`)
 
     // Execute the basket trade
     const result = await pearClient.executeBasketTrade(
@@ -59,7 +55,6 @@ export async function POST(request: NextRequest) {
       notional
     )
 
-    console.log(`Trade executed successfully. Order ID: ${result.orderId}`)
 
     return NextResponse.json(
       {

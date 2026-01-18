@@ -28,9 +28,10 @@ export default function Collection() {
   }
 
   useEffect(() => {
-    const storedWallet = localStorage.getItem('walletAddress')
-    
-    const createMockCollection = (address: string): UserCollection => ({
+    if (typeof window !== 'undefined') {
+      const storedWallet = localStorage.getItem('walletAddress')
+      
+      const createMockCollection = (address: string): UserCollection => ({
       walletAddress: address,
       cards: mockCards.slice(0, 6),
       totalCards: 6,
@@ -80,6 +81,7 @@ export default function Collection() {
     }
 
     loadWallet()
+    }
   }, [])
 
   const handleCardPress = (card: CardType) => {

@@ -29,7 +29,6 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    console.log(`Starting automatic authentication for address: ${address}`)
 
     // Verify private key matches address
     try {
@@ -48,7 +47,6 @@ export async function POST(request: NextRequest) {
           { status: 400 }
         )
       }
-      console.log(`✅ Verified private key matches address: ${walletAddress}`)
     } catch (error: any) {
       return NextResponse.json(
         {

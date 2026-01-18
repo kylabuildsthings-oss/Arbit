@@ -44,3 +44,56 @@ body {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
+/* Global Responsive Utilities */
+.screen-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: clamp(16px, 2vw, 20px) clamp(24px, 4vw, 40px);
+  padding-top: clamp(180px, 22vh, 220px);
+  box-sizing: border-box;
+}
+
+/* Responsive container padding adjustments */
+@media (min-width: 1920px) {
+  .screen-container {
+    padding: 40px 100px;
+    padding-top: 260px;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 1919px) {
+  .screen-container {
+    padding: 35px 80px;
+    padding-top: 250px;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .screen-container {
+    padding: 30px 60px;
+    padding-top: 240px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .screen-container {
+    padding: 25px 50px;
+    padding-top: 230px;
+  }
+}
+
+@media (max-width: 768px) {
+  .screen-container {
+    padding: 20px 24px;
+    padding-top: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .screen-container {
+    padding: 16px 20px;
+    padding-top: 180px;
+  }
+}
+

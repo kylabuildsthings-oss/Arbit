@@ -17,18 +17,22 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     // Get theme from localStorage or default to dark
-    const savedTheme = localStorage.getItem('theme') as Theme | null
-    const initialTheme = savedTheme || 'dark'
-    setTheme(initialTheme)
-    document.documentElement.setAttribute('data-theme', initialTheme)
-    setMounted(true)
+    if (typeof window !== 'undefined') {
+      const savedTheme = localStorage.getItem('theme') as Theme | null
+      const initialTheme = savedTheme || 'dark'
+      setTheme(initialTheme)
+      document.documentElement.setAttribute('data-theme', initialTheme)
+      setMounted(true)
+    }
   }, [])
 
   const toggleTheme = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark'
     setTheme(newTheme)
-    localStorage.setItem('theme', newTheme)
-    document.documentElement.setAttribute('data-theme', newTheme)
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('theme', newTheme)
+      document.documentElement.setAttribute('data-theme', newTheme)
+    }
   }
 
   // Always provide context, even before mounting

@@ -100,6 +100,11 @@
   text-transform: uppercase;
 }
 
+/* Light mode rarity text */
+[data-theme='light'] .rarity-text {
+  color: #1a1a1a;
+}
+
 .card-container[style*="420px"] .rarity-badge,
 .card-container[style*="588px"] .rarity-badge {
   font-size: 18px;  /* Increased for preview cards */
@@ -249,6 +254,11 @@
   max-width: 100%;
 }
 
+/* Light mode card name */
+[data-theme='light'] .card-name {
+  color: #1a1a1a;
+}
+
 .card-container[style*="504px"] .card-name,
 .card-container[style*="1.8"] .card-name,
 .card-container[style*="770px"] .card-name,
@@ -270,6 +280,11 @@
   padding: 0;
   box-sizing: border-box;
   max-width: 100%;
+}
+
+/* Light mode card title */
+[data-theme='light'] .card-title {
+  color: #4a4a4a;
 }
 
 .card-container[style*="504px"] .card-title,
@@ -604,4 +619,48 @@
   padding: 5px 10px;  /* Increased from 3px 6px */
   margin-top: 8px;  /* Increased spacing */
   border-radius: 10px;  /* Increased for preview cards */
+}
+
+/* Light Mode Text Visibility Fixes */
+[data-theme='light'] .rarity-text {
+  color: #1a1a1a !important;
+}
+
+[data-theme='light'] .rarity-number {
+  color: #B8860B !important;  /* Darker gold for better contrast */
+}
+
+[data-theme='light'] .card-name {
+  color: #1a1a1a !important;
+}
+
+[data-theme='light'] .card-title {
+  color: #4a4a4a !important;
+}
+
+[data-theme='light'] .stat-label {
+  color: #3d3d3d !important;
+}
+
+[data-theme='light'] .stat-value {
+  color: #1a1a1a !important;
+}
+
+[data-theme='light'] .stat-value.large-stat-value {
+  color: #1a1a1a !important;
+}
+
+[data-theme='light'] .card-container[style*="504px"] .stat-value.large-stat-value,
+[data-theme='light'] .card-container[style*="1.8"] .stat-value.large-stat-value,
+[data-theme='light'] .card-container[style*="770px"] .stat-value.large-stat-value,
+[data-theme='light'] .card-container[style*="2.2"] .stat-value.large-stat-value {
+  color: #1a1a1a !important;
+}
+
+[data-theme='light'] .faction-badge {
+  color: #1a1a1a !important;
+}
+
+[data-theme='light'] .description-text {
+  color: #3d3d3d !important;
 }

@@ -1,0 +1,142 @@
+.candlestick-chart-container {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: clamp(12px, 1.5vw, 16px);
+  padding: clamp(20px, 2.5vw, 24px);
+  margin-bottom: clamp(20px, 2.5vw, 24px);
+  max-width: min(900px, 85vw);
+  min-height: clamp(350px, 40vh, 400px);
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.pair-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pair-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.price-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.current-price {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.price-change {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.price-change.positive {
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.price-change.negative {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.timeframe-selector {
+  display: flex;
+  gap: 8px;
+}
+
+.timeframe-btn {
+  padding: 8px 16px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.timeframe-btn:hover {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.timeframe-btn.active {
+  background: var(--accent-color);
+  color: white;
+  border-color: var(--accent-color);
+}
+
+.chart-wrapper {
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.candlestick-svg {
+  width: 100%;
+  height: auto;
+  min-height: 400px;
+  display: block;
+}
+
+.candle-body {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.candle-body:hover {
+  opacity: 0.8;
+}
+
+.candle-tooltip {
+  position: absolute;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px;
+  pointer-events: none;
+  z-index: 1000;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  min-width: 150px;
+  margin-top: -10px;
+}
+
+.tooltip-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+
+.tooltip-row:last-child {
+  margin-bottom: 0;
+}
+
+.tooltip-row span:first-child {
+  color: var(--text-secondary);
+}
+
+.tooltip-row span:last-child {
+  color: var(--text-primary);
+  font-weight: 600;
+}
