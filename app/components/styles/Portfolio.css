@@ -2,6 +2,9 @@
   padding-top: 220px; /* Increased top padding to avoid navigation clash */
   padding-bottom: 30px;
   position: relative;
+  background: linear-gradient(180deg, var(--gradient-start) 0%, var(--gradient-middle) 50%, var(--gradient-end) 100%);
+  min-height: 100vh;
+  transition: background 0.3s ease;
 }
 
 

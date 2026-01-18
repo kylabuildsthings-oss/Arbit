@@ -1,6 +1,6 @@
 .home-screen {
   min-height: 100vh;
-  background: linear-gradient(180deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
+  background: linear-gradient(180deg, var(--gradient-start) 0%, var(--gradient-middle) 50%, var(--gradient-end) 100%);
   padding: 20px 40px;  /* Reduced padding */
   padding-top: 220px;  /* Increased top padding to move content further down from navigation */
   padding-bottom: 20px;  /* Reduced bottom padding */
@@ -9,6 +9,7 @@
   justify-content: flex-start;
   align-items: center;
   position: relative;
+  transition: background 0.3s ease;
 }
 
 .demo-card-section {
@@ -250,28 +251,30 @@
 .logo-text {
   font-size: 120px;  /* Significantly increased logo size */
   font-weight: 900;  /* Extra bold */
-  color: #fff;
+  color: var(--text-primary);
   letter-spacing: 12px;
   margin-bottom: 8px;
   margin-top: 0;
   text-shadow: 
     0 0 20px rgba(139, 92, 246, 0.8),
     0 0 40px rgba(139, 92, 246, 0.6),
-    2px 2px 8px rgba(0, 0, 0, 0.5);
-  background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
+    2px 2px 8px var(--shadow-color);
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.5));
+  transition: color 0.3s ease;
 }
 
 .tagline {
   font-size: 36px;  /* Increased logo size */
-  color: #ccc;
+  color: var(--text-secondary);
   font-weight: 400;
   letter-spacing: 6px;
   margin: 0;
   text-shadow: 0 0 10px rgba(139, 92, 246, 0.4);
+  transition: color 0.3s ease;
 }
 
 /* Welcome Section */
@@ -286,14 +289,15 @@
 .welcome-title {
   font-size: 48px;  /* Reduced for compact layout */
   font-weight: bold;
-  color: #fff;
+  color: var(--text-primary);
   margin-bottom: 16px;  /* Reduced margin */
   margin-top: 0;
+  transition: color 0.3s ease;
 }
 
 .welcome-text {
   font-size: 24px;  /* Reduced for compact layout */
-  color: #ccc;
+  color: var(--text-secondary);
   line-height: 36px;  /* Reduced line height */
   padding: 0 40px;
   margin: 0;
@@ -302,6 +306,7 @@
   margin-right: auto;
   white-space: normal;
   word-spacing: 2px;
+  transition: color 0.3s ease;
 }
 
 /* Actions */

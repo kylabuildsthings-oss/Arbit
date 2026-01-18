@@ -7,15 +7,15 @@
 }
 
 .wallet-status {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--card-bg);
   border-radius: 20px;
   padding: 28px;
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--border-color);
   transition: all 0.3s ease;
 }
 
 .wallet-status.connected {
-  border-color: rgba(139, 92, 246, 0.5);
+  border-color: var(--accent-color);
   background: rgba(139, 92, 246, 0.1);
 }
 
@@ -46,7 +46,8 @@
 .status-text {
   font-size: 24px;  /* Increased from 18px */
   font-weight: 600;
-  color: #fff;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 .wallet-address-display {

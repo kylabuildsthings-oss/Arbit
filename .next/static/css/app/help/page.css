@@ -3,10 +3,11 @@
   \****************************************************************************************************************************************************************************************************************************************************************************/
 .help-screen {
   min-height: 100vh;
-  background: linear-gradient(180deg, #0a0a0f 0%, #1a1a2e 50%, #16213e 100%);
+  background: linear-gradient(180deg, var(--gradient-start) 0%, var(--gradient-middle) 50%, var(--gradient-end) 100%);
   padding: 40px 30px;  /* Increased padding */
   padding-top: 220px;  /* Increased top padding to avoid navigation clash */
   padding-bottom: 40px;  /* Reduced bottom padding */
+  transition: background 0.3s ease;
 }
 
 .help-content {
@@ -22,15 +23,17 @@
 .help-title {
   font-size: 56px;  /* Increased from 32px */
   font-weight: bold;
-  color: #fff;
+  color: var(--text-primary);
   margin-bottom: 16px;  /* Increased from 8px */
   margin-top: 0;
+  transition: color 0.3s ease;
 }
 
 .help-subtitle {
   font-size: 26px;  /* Increased from 16px */
-  color: #aaa;
+  color: var(--text-tertiary);
   margin: 0;
+  transition: color 0.3s ease;
 }
 
 .faq-container {

@@ -3,11 +3,12 @@
 }
 
 .charts-loading {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--card-bg);
   border-radius: 16px;
   padding: 40px;
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color);
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .charts-loading p {
@@ -19,11 +20,12 @@
 .charts-section-title {
   font-size: 24px;
   font-weight: bold;
-  color: #fff;
+  color: var(--text-primary);
   margin-bottom: 24px;
   display: flex;
   align-items: center;
   gap: 12px;
+  transition: color 0.3s ease;
 }
 
 .charts-grid {
@@ -126,12 +128,13 @@
   left: 50%;
   transform: translateX(-50%);
   margin-bottom: 8px;
-  background: rgba(10, 10, 15, 0.95);
+  background: var(--bg-primary);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 10px 14px;
-  color: #fff;
+  color: var(--text-primary);
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
   font-size: 12px;
   white-space: normal;
   z-index: 1000;

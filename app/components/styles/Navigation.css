@@ -3,16 +3,17 @@
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(10, 10, 15, 0.95);
+  background: var(--bg-primary);
   backdrop-filter: blur(10px);
-  border-bottom: 3px solid rgba(255, 255, 255, 0.15);  /* Changed from border-top */
+  border-bottom: 3px solid var(--border-color);
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 16px 0;  /* Increased from 10px */
   z-index: 1000;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);  /* Changed shadow direction */
+  box-shadow: 0 4px 20px var(--shadow-color);
   overflow-x: auto;  /* Allow horizontal scroll on small screens */
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .nav-item {
