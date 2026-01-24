@@ -15,7 +15,7 @@
     "web:build": "cd web-preview && npm run build"
   },
   "dependencies": {
-    "react": "18.2.0",
+    "react": "19.2.3",
     "react-native": "0.72.6",
     "@react-navigation/native": "^6.1.9",
     "@react-navigation/stack": "^6.3.20",
@@ -35,7 +35,7 @@
     "@react-native/eslint-config": "^0.72.2",
     "@react-native/metro-config": "^0.72.11",
     "@tsconfig/react-native": "^3.0.2",
-    "@types/react": "^18.2.45",
+    "@types/react": "^19.2.9",
     "@types/react-test-renderer": "^18.0.7",
     "babel-jest": "^29.7.0",
     "eslint": "^8.54.0",
